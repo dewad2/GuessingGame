@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Guessing Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Wire+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aladin|Ewert" rel="stylesheet">
+  </head>
+  <body>
+
+      <div id='app' class="container center">
+
+        <div id='headers'>
+          <h1 id='title'>GUESSING GAME</h1>
+          <h2 id='rollup'>Roll up! Roll up! Stop your fidgets!</h2>
+          <h3 id='question'>Between one and a hundred...can you guess my DIGITS??</h3>
+        </div>
+
+        <div id='main'>
+          <div id='input-parent' class='container center'>
+            <input id='player-input' placeholder='#' maxlength='3' autofocus=autofocus></input>
+            <button id='submit' class='btn btn-success btn-lg'>Go!</button>
+          </div>
+
+          <div id='guesses'>
+            <ul class='guess'>
+              <li class='guessed-block'>-</li>
+              <li class='guessed-block'>-</li>
+              <li class='guessed-block'>-</li>
+              <li class='guessed-block'>-</li>
+              <li class='guessed-block'>-</li>
+            </ul>
+          </div>
+
+          <div id="menu-btns">
+            <button class="btn btn-danger btn-sm">reset</button>
+            <button class="btn btn-info btn-sm">hint</button>
+          </div>
+        </div>
+        
+      </div>
+        
+
+
+
+      <div id='footer' class='center'>
+        <div class='row'>
+          <div class='logos col-sm-4'>
+            <img src='fa-logo@2x.png' id='fullstack'></img>
+          </div>
+
+          <div class='logos col-sm-4'>
+            <h4 id='Dani'>Project by Dani de Waal</h4>
+          </div>
+
+          <div class='logos col-sm-4'>
+            <img src='grace_hopper_academy.png' id='grace-hopper'></img>
+          </div>
+        </div>
+      </div>
+
+    
+  </body>
+</html>
