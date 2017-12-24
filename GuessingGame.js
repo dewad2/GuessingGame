@@ -65,7 +65,7 @@ Game.prototype.checkGuess = function() {
 	
 	if(this.playersGuess === this.winningNumber) {
 		$('#hint','#submit').prop("disabled", true);
-		$('#rollup').text('');
+		$('#rollup').text('Press reset to play again!');
 		return 'You read my mind: ' + this.playersGuess + ' !';
 	}
 
@@ -96,11 +96,11 @@ Game.prototype.checkGuess = function() {
 
 
 				if (diff < 10) {
-					return 'You\'re burning up!';
+					return 'You\'re very close!';
 				} else if (diff < 25) {
 					return 'You\'re lukewarm.';
 				} else if (diff < 50) {
-					return 'You\'re a bit chilly...';
+					return 'You\'re pretty far off still..';
 				} else {
 					return 'You\'re ice cold!';
 				}
