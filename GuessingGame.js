@@ -71,7 +71,8 @@ Game.prototype.checkGuess = function() {
 
 	else {
 		if(this.pastGuesses.indexOf(this.playersGuess) > -1) {
-		return 'You have already guessed that number, guess again!';
+		$('#rollup').text('You already guessed that number...guess again!!')
+		return '';
 	
 		}
 		else {
@@ -79,9 +80,11 @@ Game.prototype.checkGuess = function() {
 			$('#guess-list li:nth-child(' + this.pastGuesses.length + ')').text(this.playersGuess);
 				
 			if(this.pastGuesses.length === 5) {
-				$('#rollup').text('Click the reset button to play again!');
+				$('#rollup').text('I was thinking of ' + this.playersGuess);
+				$('#question').text('Press reset to play again!')
+				// $('#placeholder').text('Play again??')
 				$('#hint','#submit').prop("disabled", true);
-					return 'You Lose.';
+					return 'You lose';
 			}
 			else {
 				var diff = this.difference();
