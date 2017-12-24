@@ -66,7 +66,7 @@ Game.prototype.checkGuess = function() {
 	if(this.playersGuess === this.winningNumber) {
 		$('#hint','#submit').prop("disabled", true);
 		$('#rollup').text('');
-		return 'You read my mind, ' + this.playersGuess + ' was my number!!';
+		return 'You read my mind: ' + this.playersGuess + ' !';
 	}
 
 	else {
@@ -82,7 +82,6 @@ Game.prototype.checkGuess = function() {
 			if(this.pastGuesses.length === 5) {
 				$('#rollup').text('I was thinking of ' + this.playersGuess);
 				$('#question').text('Press reset to play again!')
-				// $('#placeholder').text('Play again??')
 				$('#hint','#submit').prop("disabled", true);
 					return 'You lose';
 			}
