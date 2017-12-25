@@ -51,14 +51,13 @@ Game.prototype.isLower = function() {
 
 Game.prototype.playersGuessSubmission = function(guess) {
 
-	if(typeof guess !== 'number' || guess <= 0 || guess > 100) {
-		throw 'That is an invalid guess.';
-	}
+	
 
+	
 	this.playersGuess = guess;
 
-
 	return this.checkGuess();
+
 }
 
 Game.prototype.checkGuess = function() {
@@ -80,7 +79,7 @@ Game.prototype.checkGuess = function() {
 			$('#guess-list li:nth-child(' + this.pastGuesses.length + ')').text(this.playersGuess);
 				
 			if(this.pastGuesses.length === 5) {
-				$('#rollup').text('I was thinking of ' + this.playersGuess);
+				$('#rollup').text('I was thinking of ' + this.winningNumber);
 				$('#question').text('Press reset to play again!')
 				$('#hint','#submit').prop("disabled", true);
 					return 'You lose';
@@ -124,6 +123,11 @@ Game.prototype.provideHint = function() {
 function makeAGuess(game) {
 	$('#question').text('');
 	var guess = $('#player-input').val();
+
+	if(typeof guess !== 'Number' || guess <= 0 || guess > 100) {
+		$('#title').text('That is an invalid guess.');
+	}
+
 	$('#player-input').val('');
 	var output = game.playersGuessSubmission(parseInt(guess,10));
 	$('#title').text(output);
