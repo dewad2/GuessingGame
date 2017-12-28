@@ -52,8 +52,11 @@ Game.prototype.isLower = function() {
 Game.prototype.playersGuessSubmission = function(guess) {
 
 	
+	if(isNaN(guess) || guess <= 0 || guess > 100) {
+		$('#rollup').text('');
+		return 'That is an invalid guess';
+	}
 
-	
 	this.playersGuess = guess;
 
 	return this.checkGuess();
@@ -121,16 +124,16 @@ Game.prototype.provideHint = function() {
 }
 
 function makeAGuess(game) {
+
 	$('#question').text('');
 	var guess = $('#player-input').val();
 
-	if(typeof guess !== 'Number' || guess <= 0 || guess > 100) {
-		$('#title').text('That is an invalid guess.');
-	}
-
 	$('#player-input').val('');
+
 	var output = game.playersGuessSubmission(parseInt(guess,10));
+
 	$('#title').text(output);
+
 }
 
 $(document).ready(function() {
