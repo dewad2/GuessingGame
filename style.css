@@ -16,11 +16,15 @@ img {
     height: 100px;
 }
 
-
 #app {
- background-color : rgba(250, 250, 250, 0.4);  
- width: 65%;
+  width : 63%;
 }
+
+
+#headers {
+   background-color : rgba(250, 250, 250, 0.4);  
+}
+
 
 #title {
   margin : 10px;
